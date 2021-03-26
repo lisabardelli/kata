@@ -1,18 +1,13 @@
 def two_sum(nums, target)
-    result = []
-    sum = 0
- 
-    for i in 0...nums.length
-        sum += (nums[i]).to_i
+  result = []
+  (0...nums.length).each do |i|
+    diff = target - nums[i]
+    hash = { diff => i }
+    puts hash
+    next unless hash.has_key?(diff)
 
-        for j in (i+1)..nums.length 
-            sum += (nums[j]).to_i
-            
-            if sum == target
-                result.push(i)
-                result.push( nums.index(nums[j]) )
-            end 
-        end 
-    end 
+    result.push(i)
+    result.push(nums.index(diff))
     return result
+  end
 end
