@@ -3,7 +3,6 @@ def two_sum(nums, target)
   (0...nums.length).each do |i|
     diff = target - nums[i]
     hash = { diff => i }
-    puts hash
     next unless hash.has_key?(diff)
 
     result.push(i)
